@@ -30,4 +30,4 @@ else
 fi
 
 echo "Starting MariaDB server..."
-exec mysqld --user=mysql --console
+exec mysqld --user=mysql --console --bind-address=0.0.0.0

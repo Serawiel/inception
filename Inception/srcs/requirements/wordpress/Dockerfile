@@ -21,6 +21,9 @@ RUN mkdir -p /var/www \
 
 RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
 
+RUN sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 9000|' \
+	/etc/php/7.4/fpm/pool.d/www.conf
+
 WORKDIR /var/www/html
 
 COPY tools/init_wp.sh /init_wp.sh
