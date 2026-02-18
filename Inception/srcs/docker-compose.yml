@@ -56,6 +56,22 @@ services:
       - docker_network
     restart: always
 
+  vsftpd:
+    build:
+      context: ./requirements/bonus/vsftpd
+    image: vsftpd
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    secrets:
+    - ftp_password
+    - ftp_user
+    networks:
+      - docker_network
+    volumes:
+      - wordpress_data:/var/www/html
+    restart: always
+
 volumes:
   wordpress_data:
     driver: local
@@ -80,3 +96,7 @@ secrets:
     file: ../secrets/db_root_password.txt
   db_user:
     file: ../secrets/credentials.txt
+  ftp_password:
+    file: ../secrets/ftp_password.txt
+  ftp_user:
+    file: ../secrets/ftp_user.txt
