@@ -48,6 +48,14 @@ services:
       - mariadb_data:/var/lib/mysql
     restart: always
 
+  redis:
+    build:
+      context: ./requirements/bonus/redis
+    image: redis
+    networks:
+      - docker_network
+    restart: always
+
 volumes:
   wordpress_data:
     driver: local

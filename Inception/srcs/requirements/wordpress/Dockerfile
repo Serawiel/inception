@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
 	php-mysql \
 	php-gd \
 	php-zip \
+	php-redis \
 	php-mbstring \
 	php-curl \
 	php-xml \
