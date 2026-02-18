@@ -14,6 +14,8 @@ if ! id "$FTP_USER" >/dev/null 2>&1; then
     echo "FTP user created!"
 fi
 
+mkdir -p /var/run/vsftpd/empty
+
 # Configure vsftpd
 cat > /etc/vsftpd.conf << EOF
 listen=YES
