@@ -82,6 +82,29 @@ services:
       - docker_network
     restart: always
 
+  adminer:
+    build:
+      context: ./requirements/bonus/adminer
+    image: adminer
+    ports:
+      - "9001:9001"
+    networks:
+      - docker_network
+    restart: always
+
+  portainer:
+    build:
+      context: ./requirements/bonus/portainer
+    image: portainer
+    ports:
+      - "9443:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - docker_network
+    restart: always
+
 volumes:
   wordpress_data:
     driver: local
