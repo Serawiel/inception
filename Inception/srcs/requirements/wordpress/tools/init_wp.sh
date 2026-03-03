@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+#set -e
 
 # Read secrets from Docker secrets files
 MYSQL_PASSWORD=$(cat /run/secrets/db_password)
