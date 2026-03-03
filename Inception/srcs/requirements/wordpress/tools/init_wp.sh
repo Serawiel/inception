@@ -56,4 +56,4 @@ if ! wp redis status --allow-root --path=/var/www/html 2>/dev/null | grep -q "Co
 fi
 
 echo "Starting PHP-FPM..."
-exec php-fpm7.4 --nodaemonize
+exec php-fpm8.2 --nodaemonize

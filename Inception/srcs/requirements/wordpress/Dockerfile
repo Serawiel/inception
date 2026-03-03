@@ -1,4 +1,4 @@
-FROM debian:11
+FROM debian:12
 
 RUN apt-get update && apt-get install -y \
 	php-fpm \
@@ -22,8 +22,8 @@ RUN mkdir -p /var/www \
 
 RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
 
-RUN sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 9000|' \
-	/etc/php/7.4/fpm/pool.d/www.conf
+RUN sed -i 's|listen = /run/php/php8.2-fpm.sock|listen = 9000|' \
+	/etc/php/8.2/fpm/pool.d/www.conf
 
 WORKDIR /var/www/html
 
