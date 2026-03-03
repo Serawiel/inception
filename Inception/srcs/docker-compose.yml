@@ -77,7 +77,7 @@ services:
       context: ./requirements/bonus/static-site
     image: static-site
     ports:
-      - "8080:80"
+      - "80:80"
     networks:
       - docker_network
     restart: always
