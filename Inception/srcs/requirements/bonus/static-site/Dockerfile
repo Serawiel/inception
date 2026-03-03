@@ -1,8 +1,8 @@
 FROM debian:11
 
 RUN apt-get update && apt-get install -y \
-    nginx \
-    && rm -rf /var/lib/apt/lists/*
+	nginx \
+	&& rm -rf /var/lib/apt/lists/*
 
 COPY content/index.html /var/www/html/index.html
 
