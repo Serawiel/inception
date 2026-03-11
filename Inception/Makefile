@@ -6,6 +6,7 @@ DATA_PATH = /home/cprot/data
 all:
 	mkdir -p $(DATA_PATH)/wordpress
 	mkdir -p $(DATA_PATH)/mariadb
+	mkdir -p $(DATA_PATH)/portainer
 	$(DC) up -d --build
 
 build:
@@ -14,6 +15,7 @@ build:
 up:
 	mkdir -p $(DATA_PATH)/wordpress
 	mkdir -p $(DATA_PATH)/mariadb
+	mkdir -p $(DATA_PATH)/portainer
 	$(DC) up -d
 
 down:

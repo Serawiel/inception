@@ -24,7 +24,7 @@ Before working on this project, ensure you have the following installed and conf
 
 ### System Requirements
 
-- Virtual Machine running Debian 11+ or Alpine (penultimate stable version)
+- Virtual Machine running Debian 12+ or Alpine (penultimate stable version)
 - Minimum 2GB RAM
 - 20GB disk space
 - Root/sudo access for initial setup

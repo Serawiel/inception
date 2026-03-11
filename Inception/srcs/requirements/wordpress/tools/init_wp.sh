@@ -1,7 +1,7 @@
 #!/bin/sh
-set -e
+#set -e
 
-# Read secrets from Docker secrets files
+
 MYSQL_PASSWORD=$(cat /run/secrets/db_password)
 MYSQL_USER=$(cat /run/secrets/db_user)
 
@@ -56,4 +56,4 @@ if ! wp redis status --allow-root --path=/var/www/html 2>/dev/null | grep -q "Co
 fi
 
 echo "Starting PHP-FPM..."
-exec php-fpm7.4 --nodaemonize
+exec php-fpm8.2 --nodaemonize

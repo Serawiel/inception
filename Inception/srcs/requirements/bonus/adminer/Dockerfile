@@ -1,4 +1,4 @@
-FROM debian:11
+FROM debian:12
 
 RUN apt-get update && apt-get install -y \
 	php-fpm \
@@ -6,13 +6,13 @@ RUN apt-get update && apt-get install -y \
 	wget \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN mkdir -p /run/php /var/www/html
+
 RUN wget -O /var/www/html/index.php https://www.adminer.org/latest.php
 
-RUN sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 9001|' \
-    /etc/php/7.4/fpm/pool.d/www.conf
-
-RUN mkdir -p /run/php /var/www/html
+RUN sed -i 's|listen = /run/php/php8.2-fpm.sock|listen = 9001|' \
+    /etc/php/8.2/fpm/pool.d/www.conf
 
 EXPOSE 9001
 
-CMD ["php-fpm7.4", "--nodaemonize"]
+CMD ["php", "-S", "0.0.0.0:9001", "-t", "/var/www/html"]
