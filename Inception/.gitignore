@@ -1,8 +1,8 @@
 # Secrets
-#secrets/
+secrets/
 
 # Environment
-#.env
+.env
 
 # Data
 data/
